@@ -31,8 +31,9 @@ while True:
     else:
         break
 
+#Only apply the following calculations if valid input has been received
 if count:
-#A loop sorting the list of inputted numbers from lowest to highest
+    #A selection sort applied to the list of inputted numbers to order from lowest to highest
     sorted = []
     while numbers:
         smallest = numbers[0]
