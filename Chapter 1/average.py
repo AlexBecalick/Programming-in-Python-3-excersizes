@@ -18,13 +18,10 @@ while True:
         sum += number
         if count == 0:
             lowest = number
-        else:
-            if number < lowest:
-                lowest = number
-        if count == 0:
             highest = number
-        else:
-            if number > highest:
+        elif number <= lowest:
+                lowest = number
+        elif number > highest:
                 highest = number
         numbers.append(number)
         count +=1
@@ -44,13 +41,13 @@ if count:
         numbers.remove(smallest)
 
     #A calculation of the median from the sorted number list
-    if len(sorted)%2:
+    if len(sorted)%2:   #e.g. if there are an odd amount of numbers, pick the middle one
         median = sorted[(len(sorted)-1)//2]
-    else:
+    else:   #e.g. if there are an even amount of numbers, pick the two middle ones and take their mean value
         median = (sorted[(len(sorted)//2)] + sorted[(len(sorted)//2)+1]) / 2
     
     #Output and calculation
-    print(" sorted = ", sorted)
+    print("Numbers chosen = ", sorted)
     print("count = ", count, " sum = ", sum, "lowest = ", lowest,
         "highest = ", highest, " mean = ", sum/count, " median = ",
         median)
